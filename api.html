@@ -17,7 +17,7 @@
                 var card = '';
                 var url =  `https://images-api.nasa.gov/search?q=${searchWord}&page_size=6&media_type=image` ;
     
-                    fetch(url)
+                    fetch(url) // Get JSON data from NASA.gov API
                     .then(response => {return response.json();}) // Convert JSON into a regular object/array
                     .then(nasaData => {
                         nasaArray = nasaData.collection.items; // Focus in on just the part of the data that we need
@@ -29,7 +29,7 @@
                                     <p>${item.data[0].description}</p>
                                 </div>
                             </div>`);
-                        document. getElementById('output').innerHTML = card;
+                        document. getElementById('output').innerHTML = card; // send the cards to the output/display HTML
                     });   
             };
         </script>
