@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inputID" value="" onkeyup="">
+    <ul id="result"></ul>
+<script>
+    // array of words
+    var terms = ['apple','apple watch','apple mackbook','apple macbook pro', 'iphone', 'iphone 12']
+    // declare the message/print area
+    var regExInput = new RegExp(input,"i");
+    // Filter the searchable terms by the input(regexp) then store as matchingTerms
+    var matchingTerms = searchableTerms.filter(term => term.match(regExInput));
+    var resultEL = document.getElementById("result");
+    // declare the empty listItems variable that will hold the list of terms to printed
+    var listItems = '';
+    // Loop through the array of terms and grab each word and add it to listItem variable
+    terms.forEach(word => listItems += `<li>${word}</li>`);
+    // terms.forEach(listItems +=`<li>${word}</li>`);
+    // Send the list of words to the HTML DOM
+    resultEL.innerHTML = listItems;
+    // var terms = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua"]
+</script>
+</body>
+</html>

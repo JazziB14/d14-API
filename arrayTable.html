@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table">
+    <script>
+        var userJSON =  `[
+            {"id":1,"firstName":"Ericha","lastNname":"Selbie","email":"eselbie0@ibm.com","gender":"Female","jobTitle":"Staff Accountant II","company":"Zoomzone"},
+            {"id":2,"firstName":"Norton","lastNname":"Grishukov","email":"ngrishukov1@addthis.com","gender":"Male","jobTitle":"HR Manager","company":"Twitterbeat"},
+            {"id":3,"firstName":"Halley","lastNname":"Farndon","email":"hfarndon2@sfgate.com","gender":"Female","jobTitle":"Engineer II","company":"Oyondu"},
+            {"id":4,"firstName":"Kelby","lastNname":"Lowen","email":"klowen3@huffingtonpost.com","gender":"Non-binary","jobTitle":"Teacher","company":"Buzzbean"},
+            {"id":5,"firstName":"Edgardo","lastNname":"Walbrun","email":"ewalbrun4@free.fr","gender":"Male","jobTitle":"Help Desk Technician","company":"Blogpad"},
+            {"id":6,"firstName":"Mead","lastNname":"Moncrieffe","email":"mmoncrieffe5@weather.com","gender":"Male","jobTitle":"Payment Coordinator","company":"Dabjam"},
+            {"id":7,"firstName":"Maurizia","lastNname":"Tassell","email":"mtassell6@umn.edu","gender":"Female","jobTitle":"Food Chemist","company":"Mudo"},
+            {"id":8,"firstName":"Vite","lastNname":"Redmond","email":"vredmond7@reference.com","gender":"Male","jobTitle":"Dental Hygienist","company":"Skimia"},
+            {"id":9,"firstName":"Rhodia","lastNname":"Britto","email":"rbritto8@etsy.com","gender":"Female","jobTitle":"Staff Accountant III","company":"Linklinks"},
+            {"id":10,"firstName":"Elfrida","lastNname":"Pedder","email":"epedder9@wordpress.org","gender":"Female","jobTitle":"Sales Associate","company":"Skajo"}
+        ]`; // user info in json format, sourced from https://mockaroo.com/
+
+        var userArray = JSON.parse(userJSON); // parse the json and convert it to a regualar
+        var rows = ``; // create the table rows template literal variable
+        userArray.forEach(user => rows += //{
+        `<tr>
+            <td>${user.firstName}</td>
+            <td>${user.lastName}</td>
+            <td>${user.email}</td>
+            <td>${user.gender}</td>
+            <td>${user.jobTitle}</td>
+            <td>${user.company}</td>
+        </tr>`); // add each object property-value pair to a cell in each row
+        var tableEL = document.getElementById("table"); //define the table element
+        tableEL.innerHTML = rows; // Send the rows of user data to the table element
+
+    </script>
+   </table>
+</body>
+</html>
